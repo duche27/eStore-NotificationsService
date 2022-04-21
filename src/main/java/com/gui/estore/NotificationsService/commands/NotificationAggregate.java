@@ -28,7 +28,7 @@ public class NotificationAggregate {
         NotificationSentEvent event = NotificationSentEvent.builder()
                 .noticeId(command.getNoticeId())
                 .orderId(command.getOrderId())
-                .email("EMAIL SENT TO CUSTOMER")
+                .email(command.getEmail())
                 .build();
 
         // lanzamos event al BUS para publicar y que llegue al HANDLER y a SAGA

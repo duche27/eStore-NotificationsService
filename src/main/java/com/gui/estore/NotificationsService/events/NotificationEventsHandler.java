@@ -54,13 +54,13 @@ public class NotificationEventsHandler {
     // lanza la excepción controlada si no persiste notificationEntity
     // sin persistir nada, es transaccional
     // de aquí va a NotificationServiceEventHandler - después a NotificationErrorHandler - excepción controlada
-    @ExceptionHandler(resultType = Exception.class)
+    @ExceptionHandler()
     private void handle(Exception exception) throws Exception {
         throw exception;
     }
 
     @ExceptionHandler(resultType = IllegalArgumentException.class)
     private void handle(IllegalArgumentException exception) throws IllegalArgumentException {
-//        throw IllegalArgumentException;
+        throw exception;
     }
 }
